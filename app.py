@@ -11,6 +11,7 @@ def date_time():
 
 
 while True:
+    print("For a list of operations I can perform simply say 'help'.")
     print("I'm listening... : ")
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -19,6 +20,18 @@ while True:
         print(f'You said: {text}')
         if 'calories' in text:
             calorie_counter()
+        elif 'help' in text:
+            print("""
+            'calories' - calculate calories in a food item
+            'date' - returns the present date
+            'time' - returns the current time
+            'headlines' - returns the top headlines for the day
+            'weather' - returns the current weather for a specified city
+            'businesses' - returns the information for a specified business
+            'open website' - launches a speciifed website
+            'stocks' - asks for ticker symbol then returns the information for respective stock
+            'quit' - shuts down voice assistant
+            """)
         elif 'date' in text:
             date_time()
         elif 'time' in text:
